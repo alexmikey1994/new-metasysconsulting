@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
@@ -26,16 +27,13 @@ export default function Header() {
   return (
     <header className="fixed top-0 w-full z-50 bg-[#13051F]/90 backdrop-blur-md border-b border-white/10 text-white py-6 px-10 md:px-20 flex items-center justify-between">
       <div className="flex items-center gap-12">
-        <a href="/">
-          {/* Increased logo height for better visibility */}
+        <Link href="/">
           <Image src="/logo.png" alt="Logo" width={120} height={50} />
-        </a>
+        </Link>
       </div>
 
       <nav className="hidden md:flex items-center space-x-6 text-sm uppercase font-medium">
-        <span className="cursor-pointer hover:underline" onClick={() => router.push("/")}>
-          Home
-        </span>
+        <Link href="/" className="hover:underline">Home</Link>
 
         <div className="relative" ref={dropdownRef}>
           <button
@@ -66,40 +64,29 @@ export default function Header() {
                   "web-development",
                   "custom-solutions",
                 ].map((slug, idx) => (
-                  <span
+                  <Link
                     key={idx}
-                    className="hover:underline text-sm cursor-pointer transition-colors duration-200"
-                    onClick={() => {
-                      setShowServices(false);
-                      router.push(`/services/${slug}`);
-                    }}
+                    href={`/services/${slug}`}
+                    className="hover:underline text-sm transition-colors duration-200"
+                    onClick={() => setShowServices(false)}
                   >
                     {slug.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
-                  </span>
+                  </Link>
                 ))}
               </div>
             </div>
           )}
         </div>
 
-        <span className="cursor-pointer hover:underline" onClick={() => router.push("/about")}>
-          About
-        </span>
+        <Link href="/about" className="hover:underline">About</Link>
+        <Link href="/contact" className="hover:underline">Contact</Link>
+        <Link href="/book-online" className="hover:underline">Book Online</Link>
 
-        <span className="cursor-pointer hover:underline" onClick={() => router.push("/contact")}>
-          Contact
-        </span>
-
-        <span className="cursor-pointer hover:underline" onClick={() => router.push("/book-online")}>
-          Book Online
-        </span>
-
-        <button
-          onClick={() => router.push("/dashboard")}
-          className="ml-2 px-4 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold shadow"
-        >
-          DASHBOARD
-        </button>
+        <Link href="/dashboard">
+          <button className="ml-2 px-4 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold shadow">
+            DASHBOARD
+          </button>
+        </Link>
       </nav>
     </header>
   );

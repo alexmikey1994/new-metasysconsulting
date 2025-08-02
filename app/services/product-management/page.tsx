@@ -54,7 +54,7 @@ export default function ProductManagementPage() {
           transition={{ delay: 0.3, duration: 1 }}
           className="text-lg text-gray-300 mb-12"
         >
-          Our consultancy experts analyze your organization's operations and guide you in identifying
+          Our consultancy experts analyze your organizations operations and guide you in identifying
           software needs and business challenges. We leverage cutting-edge technologies to optimize workflows,
           automate processes, and ensure your business remains competitive and efficient.
         </motion.p>
