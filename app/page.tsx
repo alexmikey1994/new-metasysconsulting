@@ -1,15 +1,11 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { motion, Variants } from "framer-motion";
-import { Link } from "react-scroll";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import { useRouter } from "next/navigation";
-import Image from "next/image";
-
 import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -142,15 +138,53 @@ export default function HomePage() {
       <Header />
 
       <HeroSection />
-      <Section id="about" title="Who We Are" content={<p>We are committed to helping your business grow through tailored strategies and cutting-edge technology solutions.</p>} />
+      <Section
+        id="about"
+        title="Who We Are"
+        content={
+          <p>
+            We are committed to helping your business grow through tailored strategies and cutting-edge technology solutions.
+          </p>
+        }
+      />
       <ServicesSection />
-      <Section id="case-studies" title="Case Studies" content={<p>Explore how we've helped organizations like TELUS, Roto-Rooter, and others innovate and transform their digital presence.</p>} />
-      <Section id="insights" title="Insights" content={<p>Get the latest thoughts, trends, and technical insight on AI, cloud infrastructure, and digital innovation.</p>} />
-      <Section id="testimonials" title="Testimonials" content={<blockquote>“Metasys delivered impactful change with measurable ROI. Their team became an extension of ours.”</blockquote>} />
-      <Section id="book-online" title="Book Online" content={<p>Coming soon: Online booking portal and consultations.</p>} />
-      <Section id="contact" title="Contact Us" content={<p>Let’s connect and explore opportunities to work together.</p>} />
-
-
+      <Section
+        id="case-studies"
+        title="Case Studies"
+        content={
+          <p>
+            Explore how we&apos;ve helped organizations like TELUS, Roto-Rooter, and others innovate and transform their digital presence.
+          </p>
+        }
+      />
+      <Section
+        id="insights"
+        title="Insights"
+        content={
+          <p>
+            Get the latest thoughts, trends, and technical insight on AI, cloud infrastructure, and digital innovation.
+          </p>
+        }
+      />
+      <Section
+        id="testimonials"
+        title="Testimonials"
+        content={
+          <blockquote>
+            “Metasys delivered impactful change with measurable ROI. Their team became an extension of ours.”
+          </blockquote>
+        }
+      />
+      <Section
+        id="book-online"
+        title="Book Online"
+        content={<p>Coming soon: Online booking portal and consultations.</p>}
+      />
+      <Section
+        id="contact"
+        title="Contact Us"
+        content={<p>Let&apos;s connect and explore opportunities to work together.</p>}
+      />
     </main>
   );
 }

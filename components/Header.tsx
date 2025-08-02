@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
+import { useState, useEffect, useRef } from 'react';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Header() {
   const router = useRouter();
@@ -20,8 +20,8 @@ export default function Header() {
       }
     }
 
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   return (
@@ -33,36 +33,38 @@ export default function Header() {
       </div>
 
       <nav className="hidden md:flex items-center space-x-6 text-sm uppercase font-medium">
-        <Link href="/" className="hover:underline">Home</Link>
+        <Link href="/">
+          <span className="hover:underline">Home</span>
+        </Link>
 
         <div className="relative" ref={dropdownRef}>
           <button
             onClick={() => setShowServices(!showServices)}
             className="hover:underline"
           >
-            SERVICES
+            Services
           </button>
 
           {showServices && (
-            <div
-              className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white text-black rounded-lg shadow-xl w-[720px] flex p-6 z-50"
-            >
+            <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-white text-black rounded-lg shadow-xl w-[720px] flex p-6 z-50">
               <div className="w-1/2 pr-6 border-r border-gray-300">
                 <h3 className="text-2xl font-bold mb-4 leading-tight">
-                  Accelerate<br />
-                  to market<br />
+                  Accelerate
+                  <br />
+                  to market
+                  <br />
                   <span className="text-cyan-500">and go live in just weeks</span>
                 </h3>
               </div>
 
               <div className="w-1/2 pl-6 flex flex-col justify-center space-y-4">
                 {[
-                  "data-analytics",
-                  "product-management",
-                  "project-management",
-                  "talent-resourcing",
-                  "web-development",
-                  "custom-solutions",
+                  'data-analytics',
+                  'product-management',
+                  'project-management',
+                  'talent-resourcing',
+                  'web-development',
+                  'custom-solutions',
                 ].map((slug, idx) => (
                   <Link
                     key={idx}
@@ -70,7 +72,9 @@ export default function Header() {
                     className="hover:underline text-sm transition-colors duration-200"
                     onClick={() => setShowServices(false)}
                   >
-                    {slug.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase())}
+                    <span>
+                      {slug.replace(/-/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())}
+                    </span>
                   </Link>
                 ))}
               </div>
@@ -78,9 +82,15 @@ export default function Header() {
           )}
         </div>
 
-        <Link href="/about" className="hover:underline">About</Link>
-        <Link href="/contact" className="hover:underline">Contact</Link>
-        <Link href="/book-online" className="hover:underline">Book Online</Link>
+        <Link href="/about">
+          <span className="hover:underline">About</span>
+        </Link>
+        <Link href="/contact">
+          <span className="hover:underline">Contact</span>
+        </Link>
+        <Link href="/book-online">
+          <span className="hover:underline">Book Online</span>
+        </Link>
 
         <Link href="/dashboard">
           <button className="ml-2 px-4 py-1 rounded bg-cyan-600 hover:bg-cyan-700 text-white text-sm font-semibold shadow">

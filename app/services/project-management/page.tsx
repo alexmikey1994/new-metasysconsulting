@@ -59,7 +59,7 @@ export default function ProjectManagementPage() {
           className="text-lg text-gray-300 mb-12"
         >
           From small-scale projects to billion-dollar initiatives, Metasys delivers success under pressure. 
-          Whether it's remote execution or strict timelines, we adapt to your environment, people, and technologies to ensure impact and efficiency.
+          Whether it&apos;s remote execution or strict timelines, we adapt to your environment, people, and technologies to ensure impact and efficiency.
         </motion.p>
 
         <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2">
