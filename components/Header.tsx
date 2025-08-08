@@ -42,7 +42,7 @@ export default function Header() {
             onClick={() => setShowServices(!showServices)}
             className="hover:underline"
           >
-            Services
+            SERVICES
           </button>
 
           {showServices && (
